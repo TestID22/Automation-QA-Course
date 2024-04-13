@@ -16,3 +16,7 @@ class BasePage:
     def elements_are_visible(self, locator, timeout=0):
         return wait(self.driver, timeout).until(EC.visibility_of_all_elements_located(locator))
 
+    #todo: (write)describe some importannt elements
+    def go_to_element(self, element):
+        self.driver.excute_script("argument[0].scrollIntoView();",element)
+
