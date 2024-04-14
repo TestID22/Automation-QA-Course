@@ -4,6 +4,7 @@ import pytest
 #todo: Create data generator
 #todo: add faker
 #todo: add links class
+from generator.generator import generated_person
 from tests.BaseTest import BaseTest
 
 

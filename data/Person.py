@@ -5,5 +5,5 @@ from dataclasses import dataclass
 class Person:
     full_name: str = None
     email: str = None
-    current_adress: str = None
-    permanent_adress: str = None
+    current_address: str = None
+    permanent_address: str = None
