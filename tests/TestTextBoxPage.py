@@ -13,6 +13,10 @@ class TestTextBoxPage(BaseTest):
     @pytest.mark.smoke
     def test_create_user(self):
         self.text_box_page.open()
-        self.text_box_page.fill_all_fields()
-        output_name, output_email, output_current_adress, output_permanent_adress = self.text_box_page.check_filled_form()
-        print(output_name, output_email, output_current_adress, output_permanent_adress)
+        full_name, email, current_address, permanent_address = self.text_box_page.fill_all_fields()
+        output_name, output_email, output_current_address, output_permanent_address = self.text_box_page.check_filled_form()
+        assert full_name == output_name
+        assert email == output_email
+        assert current_address.replace('\n', ' ') == output_current_address
+        assert permanent_address.replace('\n', ' ') == output_permanent_address
+
