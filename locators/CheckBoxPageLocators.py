@@ -7,5 +7,4 @@ class CheckBoxPageLocators:
     ITEM_LIST = (By.XPATH, "//*[@class='rct-title']")
     CHECKED_ITEMS_LIST = (By.XPATH, "//*[@class='rct-icon rct-icon-check']")
     TITLES_OF_CHECKED_LIST = (By.XPATH, "//*[@class='rct-icon rct-icon-check']/../../span[@class='rct-title']")
-    TITLE_ITEM = (By.XPATH, ".//ancestor::span[@class='rct-text']")
     OUTPUT_RESULT = (By.XPATH, "//span[@class='text-success']")
