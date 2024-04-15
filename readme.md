@@ -15,3 +15,4 @@ Workflow
    xpath samples = "LOGIN_FIELD = ("xpath", "//input[@name='username']") PASSWORD_FIELD = ("xpath", "//input[@name='password']")"
 11. Added BaseTest class to provide all pages into other testclasses
 12. Added Person Generator. It uses Faker + dataclass 
+13. CheckBoxPage: Find child element .//ancestor::span[@class='rct-title'] 
