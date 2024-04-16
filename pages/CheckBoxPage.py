@@ -13,7 +13,6 @@ class CheckBoxPage(BasePage):
     def open_full_list(self):
         self.element_is_present(self.locators.EXPAND_ALL_BUTTON).click()
 
-
     def check_random_checkbox(self):
         item_list = self.elements_are_visible(self.locators.ITEM_LIST)
         check_list = random.sample(range(1,15), 5)
@@ -26,11 +25,11 @@ class CheckBoxPage(BasePage):
         checked_items = []
         for item in checked_items_list:
             checked_items.append(item.text)
-        return checked_items
+        return str(checked_items).replace(' ', '').capitalize().replace(".doc", '')
 
     def get_output_result(self):
         output_result = self.elements_are_present(self.locators.OUTPUT_RESULT)
         output_data = []
         for res in output_result:
             output_data.append(res.text)
-        return output_data
+        return str(output_data).replace(' ', '').lower()
