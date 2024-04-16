@@ -1,9 +1,8 @@
 from selenium.webdriver.support.ui import WebDriverWait as wait
 from selenium.webdriver.support import expected_conditions as EC
 
-#todo: think that
 class BasePage:
-    def __init__(self, driver, url):
+    def __init__(self, driver: object, url: object) -> object:
         self.driver = driver
         self.url = url
         self.wait = wait(driver,timeout=0)\
