@@ -1,5 +1,3 @@
-import random
-
 from generator.generator import generated_person
 from locators.TextBoxPageLocators import TextBoxPageLocators
 from pages.Base_page import BasePage
