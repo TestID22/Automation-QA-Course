@@ -7,6 +7,12 @@ class TestRadioButtonPage(BaseTest):
 
     def test_check_radiobutton(self):
         self.radiobutton_page.open()
-        checked_radiobutton = self.radiobutton_page.check_radiobutton()
-        output_radiobutton = self.radiobutton_page.get_checked_radiobutton()
-        assert checked_radiobutton == output_radiobutton
+        self.radiobutton_page.click_on_the_radio_button('yes')
+        output = self.radiobutton_page.get_checked_radiobutton()
+        assert output == "Yes"
+        self.radiobutton_page.click_on_the_radio_button('impressive')
+        output = self.radiobutton_page.get_checked_radiobutton()
+        assert output == "Impressive"
+        self.radiobutton_page.click_on_the_radio_button('no')
+        output = self.radiobutton_page.get_checked_radiobutton()
+        assert output == "No", 'there is a bug - button is not clicable'
