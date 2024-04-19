@@ -11,3 +11,5 @@ class WebTablePageLocators:
     SALARY_INPUT = (By.XPATH, "//input[@id='salary']")
     DEPARTMENT_INPUT = (By.XPATH, "//input[@id='department']")
     SUBMIT_BUTTON = (By.XPATH, "//button[@id='submit']")
+
+    PERSON_INFO = (By.XPATH, "//div[@class='rt-tr-group']")
