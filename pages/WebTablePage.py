@@ -7,9 +7,9 @@ class WebTablePage(BasePage):
 
     locators = WebTablePageLocators()
 
-    #todo: Ask Aleksei: a lot of code - maybe it can be simplified
+    #todo: Ask Max and Aleksei: a lot of code - maybe it can be simplified
     def add_pesron(self):
-        '''Generate random data vai @dataclass and Faker lib'''
+        '''Generate random data via @dataclass and Faker lib'''
         person_info = next(generated_person())
         first_name = person_info.first_name
         last_name = person_info.last_name
@@ -26,7 +26,7 @@ class WebTablePage(BasePage):
         self.element_is_visible(self.locators.SALARY_INPUT).send_keys(salary)
         self.element_is_visible(self.locators.DEPARTMENT_INPUT).send_keys(department)
         self.element_is_visible(self.locators.SUBMIT_BUTTON).click()
-        return first_name, last_name, email, age, salary, department
+        return [first_name, last_name, str(age), email, str(salary), department]
 
     def check_created_user(self):
         table = self.elements_are_present(self.locators.PERSON_INFO)
