@@ -1,3 +1,7 @@
+import random
+
+from selenium.webdriver.common.by import By
+
 from generator.generator import generated_person
 from locators.WebTablePageLocators import WebTablePageLocators
 from pages.Base_page import BasePage
@@ -8,7 +12,7 @@ class WebTablePage(BasePage):
     locators = WebTablePageLocators()
 
     #todo: Ask Max and Aleksei: a lot of code - maybe it can be simplified
-    def add_pesron(self):
+    def add_person(self):
         '''Generate random data via @dataclass and Faker lib'''
         person_info = next(generated_person())
         first_name = person_info.first_name
@@ -35,4 +39,11 @@ class WebTablePage(BasePage):
             user_info.append(user.text.splitlines())
         return user_info
 
+    def search_user(self, key_word):
+        self.element_is_visible(self.locators.SEARCH_INPUT).send_keys(key_word)
 
+
+    def check_search_user(self):
+        delete_button = self.element_is_present(self.locators.DELETE_BUTTON)
+        row = delete_button.find_element(By.XPATH, self.locators.ROW_PARENT)
+        return row.text.splitlines()

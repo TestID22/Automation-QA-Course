@@ -12,4 +12,8 @@ class WebTablePageLocators:
     DEPARTMENT_INPUT = (By.XPATH, "//input[@id='department']")
     SUBMIT_BUTTON = (By.XPATH, "//button[@id='submit']")
 
+    #table
     PERSON_INFO = (By.XPATH, "//div[@class='rt-tr-group']")
+    SEARCH_INPUT = (By.XPATH, "//input[@class='form-control']")
+    DELETE_BUTTON =  (By.XPATH, "//span[@title='Delete']")
+    ROW_PARENT = ".//ancestor::div[@class='rt-tr-group']"
