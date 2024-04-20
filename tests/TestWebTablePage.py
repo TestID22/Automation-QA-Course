@@ -16,9 +16,7 @@ class TestWebTablePage(BaseTest):
     #todo: Unsatable: improve search_user
     def test_search_created_person_in_the_table(self):
         self.webtable_page.open()
-        new_user = self.webtable_page.add_person()[0]
-        self.webtable_page.search_user(new_user)
-        table_result = self.webtable_page.check_search_user()
-        print(new_user)
-        print(table_result)
+        new_user = self.webtable_page.add_person()
+        self.webtable_page.search_user(new_user[0])
+        table_result = self.webtable_page.check_created_user()
         assert new_user in table_result
