@@ -42,8 +42,16 @@ class WebTablePage(BasePage):
     def search_user(self, key_word):
         self.element_is_visible(self.locators.SEARCH_INPUT).send_keys(key_word)
 
-
+    #returns all rows of a person
     def check_search_user(self):
         delete_button = self.element_is_present(self.locators.DELETE_BUTTON)
         row = delete_button.find_element(By.XPATH, self.locators.ROW_PARENT)
         return row.text.splitlines()
+
+    def edit_user(self):
+        new_user = next(generated_person())
+        self.element_is_present(self.locators.EDIT_BUTTON).click()
+        self.element_is_visible(self.locators.AGE_INPUT).clear()
+        self.element_is_visible(self.locators.AGE_INPUT).send_keys(new_user.age)
+        self.element_is_visible(self.locators.SUBMIT_BUTTON).click()
+        return str(new_user.age)
