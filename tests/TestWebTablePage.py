@@ -23,8 +23,17 @@ class TestWebTablePage(BaseTest):
 
     def test_change_user_profile(self):
         self.webtable_page.open()
-        new_user = self.webtable_page.add_person()
-        self.webtable_page.search_user(new_user[0])
+        new_user = self.webtable_page.add_person()[random.randint(0, 5)]
+        self.webtable_page.search_user(new_user)
         age = self.webtable_page.edit_user()
         updated_person = self.webtable_page.check_search_user()
         assert age in updated_person, 'ages are not match'
+
+
+    def test_delete_user(self):
+        self.webtable_page.open()
+        first_name = self.webtable_page.add_person()[0]
+        self.webtable_page.search_user(first_name)
+        self.webtable_page.delete_user()
+        data = self.webtable_page.check_deleted_user()
+        assert data == "No rows found"

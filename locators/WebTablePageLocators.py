@@ -14,7 +14,8 @@ class WebTablePageLocators:
 
     #table
     PERSON_INFO = (By.XPATH, "//div[@class='rt-tr-group']")
-    SEARCH_INPUT = (By.XPATH, "//input[@class='form-control']")
+    SEARCH_INPUT = (By.XPATH, "//input[@id='searchBox']")
     DELETE_BUTTON =  (By.XPATH, "//span[@title='Delete']")
     ROW_PARENT = ".//ancestor::div[@class='rt-tr-group']"
     EDIT_BUTTON = ((By.XPATH, "//span[@title='Edit']"))
+    NO_DATA = (By.XPATH, "//div[@class='rt-noData']")

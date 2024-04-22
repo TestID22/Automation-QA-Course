@@ -38,8 +38,9 @@ class WebTablePage(BasePage):
         for user in table:
             user_info.append(user.text.splitlines())
         return user_info
-
+    #Search user by key_word
     def search_user(self, key_word):
+        self.element_is_visible(self.locators.SEARCH_INPUT).clear()
         self.element_is_visible(self.locators.SEARCH_INPUT).send_keys(key_word)
 
     #returns all rows of a person
@@ -55,3 +56,10 @@ class WebTablePage(BasePage):
         self.element_is_visible(self.locators.AGE_INPUT).send_keys(new_user.age)
         self.element_is_visible(self.locators.SUBMIT_BUTTON).click()
         return str(new_user.age)
+
+    def delete_user(self):
+        self.element_is_present(self.locators.DELETE_BUTTON).click()
+
+    def check_deleted_user(self):
+        return self.element_is_present(self.locators.NO_DATA).text
+
