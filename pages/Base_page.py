@@ -5,12 +5,13 @@ class BasePage:
     def __init__(self, driver: object, url: object) -> object:
         self.driver = driver
         self.url = url
-        self.wait = wait(driver,timeout=0)\
+        self.wait = wait(driver,timeout=0)
 
     def open(self):
         self.driver.get(self.url)
 
     def element_is_visible(self, locator, timeout=0):
+        self.go_to_element(self.element_is_present(locator))
         return self.wait.until(EC.visibility_of_element_located(locator))
 
     def elements_are_visible(self, locator, timeout=0):
