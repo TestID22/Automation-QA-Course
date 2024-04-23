@@ -1,6 +1,7 @@
 import pytest
 
 from config.Links import Links
+from pages.ButtonsPage import ButtonsPage
 from pages.CheckBoxPage import CheckBoxPage
 from pages.RadioButtonPage import RadioButtonPage
 from pages.TextBoxPage import TextBoxPage
@@ -13,6 +14,7 @@ class BaseTest:
     check_box_page: CheckBoxPage
     radiobutton_page: RadioButtonPage
     webtable_page: WebTablePage
+    button_page: ButtonsPage
 
     @pytest.fixture(autouse=True)
     def setup(self, request, driver):
@@ -21,3 +23,4 @@ class BaseTest:
         request.cls.check_box_page = CheckBoxPage(driver, Links.CHECK_BOX_PAGE)
         request.cls.radiobutton_page = RadioButtonPage(driver, Links.RADIO_BUTTON_PAGE)
         request.cls.webtable_page = WebTablePage(driver, Links.WEB_TABLE_PAGE)
+        request.cls.button_page = ButtonsPage(driver, Links.BUTTONS_PAGE)
