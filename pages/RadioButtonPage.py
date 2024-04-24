@@ -15,3 +15,4 @@ class RadioButtonPage(BasePage):
 
     def get_checked_radiobutton(self):
         return self.element_is_visible(self.locators.OUTPUT_RESULT).text
+
