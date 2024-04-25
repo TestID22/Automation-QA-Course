@@ -7,3 +7,4 @@ class Links:
     RADIO_BUTTON_PAGE = "https://demoqa.com/radio-button"
     WEB_TABLE_PAGE = "https://demoqa.com/webtables"
     BUTTONS_PAGE = "https://demoqa.com/buttons"
+    LINKS_PAGE = "https://demoqa.com/links"
