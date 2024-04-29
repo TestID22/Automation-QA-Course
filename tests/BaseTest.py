@@ -7,7 +7,7 @@ from pages.LinksPage import LinksPage
 from pages.RadioButtonPage import RadioButtonPage
 from pages.TextBoxPage import TextBoxPage
 from pages.WebTablePage import WebTablePage
-
+from pages.UploadAndDonwloadPage import UploadAndDownloadPage
 
 class BaseTest:
 
@@ -17,6 +17,7 @@ class BaseTest:
     webtable_page: WebTablePage
     button_page: ButtonsPage
     links_page: LinksPage
+    upload_page: UploadAndDownloadPage
 
     @pytest.fixture(autouse=True)
     def setup(self, request, driver):
@@ -27,3 +28,4 @@ class BaseTest:
         request.cls.webtable_page = WebTablePage(driver, Links.WEB_TABLE_PAGE)
         request.cls.button_page = ButtonsPage(driver, Links.BUTTONS_PAGE)
         request.cls.links_page = LinksPage(driver, Links.LINKS_PAGE)
+        request.cls.upload_page = UploadAndDownloadPage(driver, Links.UPLOADANDDOWNLOAD_PAGE)
