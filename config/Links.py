@@ -8,3 +8,4 @@ class Links:
     WEB_TABLE_PAGE = "https://demoqa.com/webtables"
     BUTTONS_PAGE = "https://demoqa.com/buttons"
     LINKS_PAGE = "https://demoqa.com/links"
+    UPLOADANDDOWNLOAD_PAGE = "https://demoqa.com/upload-download"
