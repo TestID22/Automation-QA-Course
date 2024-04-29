@@ -19,6 +19,11 @@ def generated_person():
     )
 
 
-
+def file_generator():
+    path = rf"D:\Automation\Automation-QA-Course\filetest{random.randint(1, 1000000)}"
+    file = open(path, "+w")
+    file.write("Are you kidding me?")
+    file.close()
+    return path, file.name
 
 
