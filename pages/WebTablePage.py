@@ -41,7 +41,10 @@ class WebTablePage(BasePage):
     #Search user by key_word
     def search_user(self, key_word):
         self.element_is_visible(self.locators.SEARCH_INPUT).clear()
-        self.element_is_visible(self.locators.SEARCH_INPUT).send_keys(key_word)
+        try: #TODO: Rewrite
+            self.element_is_visible(self.locators.SEARCH_INPUT).send_keys(key_word)
+        except TimeoutError:
+            return TimeoutError
 
     #returns all rows of a person
     def check_search_user(self):
