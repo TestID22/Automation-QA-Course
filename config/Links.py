@@ -9,3 +9,4 @@ class Links:
     BUTTONS_PAGE = "https://demoqa.com/buttons"
     LINKS_PAGE = "https://demoqa.com/links"
     UPLOADANDDOWNLOAD_PAGE = "https://demoqa.com/upload-download"
+    DYNAMIC_PROPERTIES_PAGE = "https://demoqa.com/dynamic-properties"
