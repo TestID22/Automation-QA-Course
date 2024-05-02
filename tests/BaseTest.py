@@ -1,6 +1,7 @@
 import pytest
 
 from config.Links import Links
+from pages.FormPage import FormPage
 from pages.ButtonsPage import ButtonsPage
 from pages.CheckBoxPage import CheckBoxPage
 from pages.LinksPage import LinksPage
@@ -20,6 +21,7 @@ class BaseTest:
     links_page: LinksPage
     upload_page: UploadAndDownloadPage
     dynamic_properties_page: DynamicPropertiesPage
+    form_page: FormPage
 
     @pytest.fixture(autouse=True)
     def setup(self, request, driver):
@@ -32,3 +34,4 @@ class BaseTest:
         request.cls.links_page = LinksPage(driver, Links.LINKS_PAGE)
         request.cls.upload_page = UploadAndDownloadPage(driver, Links.UPLOADANDDOWNLOAD_PAGE)
         request.cls.dynamic_properties_page = DynamicPropertiesPage(driver, Links.DYNAMIC_PROPERTIES_PAGE)
+        request.cls.form_page = FormPage(driver, Links.FORM_PAGE)

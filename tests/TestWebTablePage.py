@@ -1,11 +1,7 @@
 import random
-import time
-
 from tests.BaseTest import BaseTest
 
-
 class TestWebTablePage(BaseTest):
-
 
     def test_create_user(self):
         self.webtable_page.open()
