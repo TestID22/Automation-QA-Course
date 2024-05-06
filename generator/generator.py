@@ -13,7 +13,7 @@ def generated_person():
         email = faker_en.email(),
         age = random.randint(10, 89),
         salary= random.randint(8_500, 39_000),
-        mobile_number = faker_en.phone_number(),
+        mobile_number = faker_en.numerify(text='##########'), #text = creats number with digits only
         department= faker_en.job()[:20],  #WebTables: Departemnt field has restricted lenght
         current_address = faker_en.address(),
         permanent_address = faker_en.address()

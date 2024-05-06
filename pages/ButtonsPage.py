@@ -6,7 +6,6 @@ class ButtonsPage(BasePage):
     
     locators = ButtonsPageLocators()
 
-    # TODO: rewrite into one func
     def click_on_dynamic_button(self):
         self.element_is_visible(self.locators.CLICK_ME_BUTTON).click()
 

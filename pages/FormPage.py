@@ -1,3 +1,4 @@
+import os
 from datetime import time
 from time import sleep
 
@@ -23,4 +24,18 @@ class FormPage(BasePage):
         self.element_is_visible(self.locators.SUBJECT).send_keys(Keys.RETURN)
         self.element_is_visible(self.locators.HOBBIES).click()
         self.element_is_present(self.locators.UPLOAD_FILE).send_keys(path)
-        sleep(5)
+        os.remove(path)
+        self.element_is_present(self.locators.CURRENT_ADDRESS).send_keys(person.current_address)
+        self.element_is_present(self.locators.STATE_DIV).click()
+        self.element_is_present(self.locators.STATE_INPUT).send_keys(Keys.RETURN)
+        self.element_is_present(self.locators.CITY_DIV).click()
+        self.element_is_present(self.locators.CITY_INPUT).send_keys(Keys.RETURN)
+        self.element_is_clickable(self.locators.SUBMIT).click()
+        return person
+
+    def get_data_from_the_table(self):
+        person_result = self.elements_are_present(self.locators.RESULT_TABLE)
+        data = []
+        for item in person_result:
+            data.append(item.text)
+        return data
