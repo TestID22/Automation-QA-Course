@@ -11,3 +11,4 @@ class Links:
     UPLOADANDDOWNLOAD_PAGE = "https://demoqa.com/upload-download"
     DYNAMIC_PROPERTIES_PAGE = "https://demoqa.com/dynamic-properties"
     FORM_PAGE = "https://demoqa.com/automation-practice-form"
+    BROWSER_WINDOWS_PAGE = "https://demoqa.com/browser-windows"
