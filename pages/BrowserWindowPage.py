@@ -7,5 +7,5 @@ class BrowserWindowPage(BasePage):
     locators = BrowserWindowPageLocators()
 
     def check_opened_new_tab(self):
-        self.element_is_visible(self.locators.NEWTAB_BUTTON).click()
+        self.element_is_visible(self.locators.NEW_TAB_BUTTON).click()
 
